@@ -1,0 +1,66 @@
+{
+  "name": "schwing",
+  "main": "index.js",
+  "type": "module",
+  "version": "0.2.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run unit",
+    "lint": "semistandard --verbose | snazzy",
+    "unit": "tap \"*.test.js\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.x",
+    "@aws-sdk/client-ses": "3.x",
+    "@aws-sdk/client-sns": "3.x",
+    "@fastify/autoload": "4.x",
+    "@fastify/cookie": "6.x",
+    "@fastify/cors": "7.x",
+    "@fastify/env": "3.x",
+    "@fastify/etag": "3.x",
+    "@fastify/helmet": "8.x",
+    "@fastify/jwt": "5.x",
+    "@fastify/rate-limit": "6.x",
+    "@fastify/sensible": "4.x",
+    "@googlemaps/google-maps-services-js": "3.x",
+    "axios": "0.x",
+    "crypto-random-string": "4.x",
+    "dayjs": "1.x",
+    "desm": "1.x",
+    "fastify": "3.x",
+    "fastify-cli": "2.x",
+    "fastify-csrf": "3.x",
+    "fastify-plugin": "3.x",
+    "fastify-redis": "4.x",
+    "fluent-json-schema": "3.x",
+    "imagemin": "8.x",
+    "imagemin-mozjpeg": "10.x",
+    "imagemin-pngquant": "9.x",
+    "ioredis": "5.x",
+    "knex": "2.x",
+    "make-promises-safe": "5.x",
+    "mime-types": "2.x",
+    "pg": "8.x",
+    "pino-colada": "2.x",
+    "pino-pretty": "7.x",
+    "qs": "6.x",
+    "sharp": "0.x",
+    "under-pressure": "5.x"
+  },
+  "devDependencies": {
+    "semistandard": "16.x",
+    "snazzy": "9.x",
+    "supertest": "6.x",
+    "tap": "16.x"
+  },
+  "keywords": [
+    "fastify",
+    "dev kit"
+  ],
+  "repository": "git://github.com/genediazjr/schwing",
+  "description": "An opinionated web application scaffold for fastify.",
+  "author": "Gene Diaz <genediazjr@gmail.com> (http://genediazjr.com)"
+}
