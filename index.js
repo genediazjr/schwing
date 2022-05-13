@@ -11,6 +11,7 @@ import Envvars from './lib/envvars.js';
 import GeoCode from './lib/geocode.js';
 import Corscap from './lib/corscap.js';
 import Security from './lib/security.js';
+import Pressure from './lib/pressure.js';
 import Httpcode from './lib/httpcode.js';
 import Indexpage from './lib/indexpage.js';
 import Ratelimit from './lib/ratelimit.js';
@@ -31,6 +32,7 @@ async function schwing (fastify, opts) {
     fastify.register(GeoCode, opts);
     fastify.register(Corscap, opts);
     fastify.register(Security, opts);
+    fastify.register(Pressure, opts);
     fastify.register(Httpcode, opts);
     fastify.register(Indexpage, opts);
     fastify.register(Ratelimit, opts);
