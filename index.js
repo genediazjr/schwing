@@ -49,6 +49,7 @@ export default fp(schwing, {
 
 export { default as Model } from './lib/postgre/model.js';
 export { HashPassword, VerifyPassword } from './lib/pbkdf2.js';
+export { Worker, Server, Instance } from './lib/cluster.js';
 export {
   IsJSONStr, EachAsync, ResizeDataUri, MakeColumnJSON, TitleCase, GetIp, AggJSONb,
   IsJSONObj, FixMobile, MakeAggObject, MakeSearchQuery, Capitalize, GetAge,
