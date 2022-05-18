@@ -2,7 +2,7 @@
   "name": "schwing",
   "main": "index.js",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "license": "MIT",
   "engines": {
     "node": ">=14"
