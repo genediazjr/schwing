@@ -6,7 +6,7 @@ import Redis from './lib/redis.js';
 import Mobile from './lib/mobile.js';
 import Pbkdf2 from './lib/pbkdf2.js';
 import Postgre from './lib/postgre/index.js';
-import Discord from './lib/discord.js';
+import Discord, { postToDiscord } from './lib/discord.js';
 import Envvars from './lib/envvars.js';
 import GeoCode from './lib/geocode.js';
 import Corscap from './lib/corscap.js';
@@ -20,6 +20,23 @@ import Privilege from './lib/privilege.js';
 import FileStore from './lib/filestore.js';
 
 async function schwing (fastify, opts) {
+  fastify.setErrorHandler(async (error, request, reply) => {
+    if (!error.statusCode || (error.statusCode >= 500 &&
+      error.message !== 'Internal Server Error')) {
+      request.log.error(error);
+      await postToDiscord({
+        embeds: [{
+          title: process.env.DOMAIN || 'localhost',
+          description: `\`\`\`${error.stack}\`\`\``
+        }]
+      });
+    }
+    if (error.statusCode) {
+      reply.status(error.statusCode).send(error);
+    } else {
+      reply.internalServerError();
+    }
+  });
   fastify.register(Envvars, opts).after(() => {
     fastify.register(Etag);
     fastify.register(Util, opts);
