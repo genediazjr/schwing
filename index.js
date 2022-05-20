@@ -24,12 +24,7 @@ async function schwing (fastify, opts) {
     if (!error.statusCode || (error.statusCode >= 500 &&
       error.message !== 'Internal Server Error')) {
       request.log.error(error);
-      await postToDiscord({
-        embeds: [{
-          title: process.env.DOMAIN || 'localhost',
-          description: `\`\`\`${error.stack}\`\`\``
-        }]
-      });
+      await postToDiscord(error);
     }
     if (error.statusCode) {
       reply.status(error.statusCode).send(error);
