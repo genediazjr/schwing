@@ -47,7 +47,7 @@
     "pino-colada": "2.x",
     "pino-pretty": "7.x",
     "qs": "6.x",
-    "sharp": "0.x",
+    "sharp": "0.30.5",
     "under-pressure": "5.x"
   },
   "devDependencies": {
