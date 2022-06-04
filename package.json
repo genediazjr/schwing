@@ -2,7 +2,7 @@
   "name": "schwing",
   "main": "index.js",
   "type": "module",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "license": "MIT",
   "engines": {
     "node": ">=14"
@@ -47,7 +47,7 @@
     "pino-colada": "2.x",
     "pino-pretty": "7.x",
     "qs": "6.x",
-    "sharp": "0.30.5",
+    "sharp": "0.30.x",
     "under-pressure": "5.x"
   },
   "devDependencies": {
