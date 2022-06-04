@@ -3,6 +3,7 @@ import Etag from '@fastify/etag';
 import Util from './lib/util.js';
 import Email from './lib/email.js';
 import Redis from './lib/redis.js';
+import Bearer from './lib/bearer.js';
 import Mobile from './lib/mobile.js';
 import Pbkdf2 from './lib/pbkdf2.js';
 import Postgre from './lib/postgre/index.js';
@@ -21,6 +22,9 @@ import FileStore from './lib/filestore.js';
 
 async function schwing (fastify, opts) {
   fastify.setErrorHandler(async (error, request, reply) => {
+    if (error.message && error.message.includes('invalid authorization')) {
+      return reply.unauthorized();
+    }
     if (!error.statusCode || (error.statusCode >= 500 &&
       error.message !== 'Internal Server Error')) {
       request.log.error(error);
@@ -37,6 +41,7 @@ async function schwing (fastify, opts) {
     fastify.register(Util, opts);
     fastify.register(Email, opts);
     fastify.register(Redis, opts);
+    fastify.register(Bearer, opts);
     fastify.register(Mobile, opts);
     fastify.register(Pbkdf2, opts);
     fastify.register(Postgre, opts);

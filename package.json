@@ -17,6 +17,7 @@
     "@aws-sdk/client-ses": "3.x",
     "@aws-sdk/client-sns": "3.x",
     "@fastify/autoload": "4.x",
+    "@fastify/bearer-auth": "7.x",
     "@fastify/cookie": "6.x",
     "@fastify/cors": "7.x",
     "@fastify/env": "3.x",
