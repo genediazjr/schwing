@@ -36,26 +36,26 @@ async function schwing (fastify, opts) {
       reply.internalServerError();
     }
   });
-  fastify.register(Envvars, opts).after(() => {
-    fastify.register(Etag);
-    fastify.register(Util, opts);
-    fastify.register(Email, opts);
-    fastify.register(Redis, opts);
-    fastify.register(Bearer, opts);
-    fastify.register(Mobile, opts);
-    fastify.register(Pbkdf2, opts);
-    fastify.register(Postgre, opts);
-    fastify.register(Discord, opts);
-    fastify.register(GeoCode, opts);
-    fastify.register(Corscap, opts);
-    fastify.register(Security, opts);
-    fastify.register(Pressure, opts);
-    fastify.register(Httpcode, opts);
-    fastify.register(Indexpage, opts);
-    fastify.register(Ratelimit, opts);
-    fastify.register(Recaptcha, opts);
-    fastify.register(Privilege, opts);
-    fastify.register(FileStore, opts);
+  await fastify.register(Envvars, opts).after(async () => {
+    await fastify.register(Etag);
+    await fastify.register(Util, opts);
+    await fastify.register(Email, opts);
+    await fastify.register(Redis, opts);
+    await fastify.register(Bearer, opts);
+    await fastify.register(Mobile, opts);
+    await fastify.register(Pbkdf2, opts);
+    await fastify.register(Postgre, opts);
+    await fastify.register(Discord, opts);
+    await fastify.register(GeoCode, opts);
+    await fastify.register(Corscap, opts);
+    await fastify.register(Security, opts);
+    await fastify.register(Pressure, opts);
+    await fastify.register(Httpcode, opts);
+    await fastify.register(Indexpage, opts);
+    await fastify.register(Ratelimit, opts);
+    await fastify.register(Recaptcha, opts);
+    await fastify.register(Privilege, opts);
+    await fastify.register(FileStore, opts);
   });
 }
 
