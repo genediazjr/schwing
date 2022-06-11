@@ -1,5 +1,4 @@
 import { test } from 'tap';
-import colada from 'pino-colada';
 import assert from 'supertest';
 import fastify from 'fastify';
 import plugin, {
@@ -27,11 +26,7 @@ test('runs when registered', async t => {
   const app = fastify({
     ignoreTrailingSlash: true,
     trustProxy: true,
-    logger: {
-      level: 'info',
-      prettyPrint: true,
-      prettifier: colada
-    }
+    logger: true
   });
 
   await app.register(plugin, { privilegeCheck: true });
