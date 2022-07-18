@@ -36,7 +36,7 @@
     "desm": "1.x",
     "fastify": "4.x",
     "fastify-cli": "4.x",
-    "fastify-plugin": "3.x",
+    "fastify-plugin": "4.x",
     "file-type": "17.x",
     "fluent-json-schema": "3.x",
     "imagemin": "8.x",
