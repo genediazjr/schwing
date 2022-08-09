@@ -32,7 +32,7 @@
     "@googlemaps/google-maps-services-js": "3.x",
     "axios": "0.x",
     "crypto-random-string": "5.x",
-    "dayjs": "1.x",
+    "dayjs": "1.11.4",
     "desm": "1.x",
     "fastify": "4.x",
     "fastify-cli": "4.x",
