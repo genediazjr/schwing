@@ -18,7 +18,7 @@
     "@aws-sdk/client-sns": "3.x",
     "@fastify/autoload": "5.x",
     "@fastify/bearer-auth": "8.x",
-    "@fastify/cookie": "7.x",
+    "@fastify/cookie": "7.3.0",
     "@fastify/cors": "8.x",
     "@fastify/csrf-protection": "5.x",
     "@fastify/env": "4.x",
