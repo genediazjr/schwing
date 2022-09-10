@@ -13,7 +13,7 @@
     "unit": "tap \"*.test.js\""
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "3.x",
+    "@aws-sdk/client-s3": "3.154.0",
     "@aws-sdk/client-ses": "3.x",
     "@aws-sdk/client-sns": "3.x",
     "@fastify/autoload": "5.x",
