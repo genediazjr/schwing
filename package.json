@@ -34,7 +34,7 @@
     "crypto-random-string": "5.x",
     "dayjs": "1.x",
     "desm": "1.x",
-    "fastify": "4.x",
+    "fastify": "4.8.1",
     "fastify-cli": "5.x",
     "fastify-plugin": "4.x",
     "file-type": "17.x",
