@@ -15,7 +15,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "3.x",
     "@aws-sdk/client-ses": "3.x",
-    "@aws-sdk/client-sns": "3.x",
+    "@aws-sdk/client-sns": "3.194.0",
     "@fastify/autoload": "5.x",
     "@fastify/bearer-auth": "8.x",
     "@fastify/cookie": "8.x",
