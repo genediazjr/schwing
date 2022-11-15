@@ -19,7 +19,7 @@
     "@fastify/autoload": "5.x",
     "@fastify/bearer-auth": "8.x",
     "@fastify/cookie": "8.x",
-    "@fastify/cors": "8.x",
+    "@fastify/cors": "8.1.1",
     "@fastify/csrf-protection": "6.x",
     "@fastify/env": "4.x",
     "@fastify/etag": "4.x",
