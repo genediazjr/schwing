@@ -43,7 +43,7 @@
     "imagemin-mozjpeg": "10.x",
     "imagemin-pngquant": "9.x",
     "ioredis": "5.x",
-    "knex": "2.x",
+    "knex": "2.4.0",
     "make-promises-safe": "5.x",
     "mime-types": "2.x",
     "pg": "8.x",
