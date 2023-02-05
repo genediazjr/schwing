@@ -21,42 +21,49 @@ import Privilege from './lib/privilege.js';
 import FileStore from './lib/filestore.js';
 
 async function schwing (fastify, opts) {
-  fastify.setErrorHandler(async (error, request, reply) => {
-    if (error.message && error.message.includes('invalid authorization')) {
-      return reply.unauthorized();
+  try {
+    fastify.setErrorHandler(async (error, request, reply) => {
+      if (error.message && error.message.includes('invalid authorization')) {
+        return reply.unauthorized();
+      }
+      if (!error.statusCode || (error.statusCode >= 500 &&
+        error.message !== 'Internal Server Error')) {
+        request.log.error(error);
+        await postToDiscord(error);
+      }
+      if (error.statusCode) {
+        reply.status(error.statusCode).send(error);
+      } else {
+        reply.internalServerError();
+      }
+    });
+    await fastify.register(Envvars, opts).after(async () => {
+      await fastify.register(Etag);
+      await fastify.register(Util, opts);
+      await fastify.register(Email, opts);
+      await fastify.register(Redis, opts);
+      await fastify.register(Bearer, opts);
+      await fastify.register(Mobile, opts);
+      await fastify.register(Pbkdf2, opts);
+      await fastify.register(Postgre, opts);
+      await fastify.register(Discord, opts);
+      await fastify.register(GeoCode, opts);
+      await fastify.register(Corscap, opts);
+      await fastify.register(Security, opts);
+      await fastify.register(Pressure, opts);
+      await fastify.register(Httpcode, opts);
+      await fastify.register(Indexpage, opts);
+      await fastify.register(Ratelimit, opts);
+      await fastify.register(Recaptcha, opts);
+      await fastify.register(Privilege, opts);
+      await fastify.register(FileStore, opts);
+    });
+  } catch (err) {
+    if (err.code === 'AVV_ERR_READY_TIMEOUT') {
+      console.error('Schwing [Error]: Check redis connection');
     }
-    if (!error.statusCode || (error.statusCode >= 500 &&
-      error.message !== 'Internal Server Error')) {
-      request.log.error(error);
-      await postToDiscord(error);
-    }
-    if (error.statusCode) {
-      reply.status(error.statusCode).send(error);
-    } else {
-      reply.internalServerError();
-    }
-  });
-  await fastify.register(Envvars, opts).after(async () => {
-    await fastify.register(Etag);
-    await fastify.register(Util, opts);
-    await fastify.register(Email, opts);
-    await fastify.register(Redis, opts);
-    await fastify.register(Bearer, opts);
-    await fastify.register(Mobile, opts);
-    await fastify.register(Pbkdf2, opts);
-    await fastify.register(Postgre, opts);
-    await fastify.register(Discord, opts);
-    await fastify.register(GeoCode, opts);
-    await fastify.register(Corscap, opts);
-    await fastify.register(Security, opts);
-    await fastify.register(Pressure, opts);
-    await fastify.register(Httpcode, opts);
-    await fastify.register(Indexpage, opts);
-    await fastify.register(Ratelimit, opts);
-    await fastify.register(Recaptcha, opts);
-    await fastify.register(Privilege, opts);
-    await fastify.register(FileStore, opts);
-  });
+    throw err;
+  }
 }
 
 export default fp(schwing, {
