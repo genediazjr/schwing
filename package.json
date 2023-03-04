@@ -29,7 +29,7 @@
     "@fastify/redis": "6.x",
     "@fastify/sensible": "5.x",
     "@fastify/under-pressure": "8.x",
-    "@googlemaps/google-maps-services-js": "3.x",
+    "@googlemaps/google-maps-services-js": "3.3.27",
     "axios": "1.x",
     "crypto-random-string": "5.x",
     "dayjs": "1.x",
