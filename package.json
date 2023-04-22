@@ -20,7 +20,7 @@
     "@fastify/bearer-auth": "9.x",
     "@fastify/cookie": "8.x",
     "@fastify/cors": "8.x",
-    "@fastify/csrf-protection": "6.x",
+    "@fastify/csrf-protection": "6.3.0",
     "@fastify/env": "4.x",
     "@fastify/etag": "4.x",
     "@fastify/helmet": "10.x",
