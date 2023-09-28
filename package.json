@@ -48,7 +48,7 @@
     "mime-types": "2.x",
     "pg": "8.x",
     "qs": "6.x",
-    "sharp": "0.31.x"
+    "sharp": "0.32.6"
   },
   "devDependencies": {
     "semistandard": "16.x",
