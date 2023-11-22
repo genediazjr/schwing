@@ -24,7 +24,7 @@
     "@fastify/env": "4.x",
     "@fastify/etag": "4.x",
     "@fastify/helmet": "10.x",
-    "@fastify/jwt": "6.x",
+    "@fastify/jwt": "7.0.0",
     "@fastify/rate-limit": "8.x",
     "@fastify/redis": "6.x",
     "@fastify/sensible": "5.x",
